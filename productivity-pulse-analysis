@@ -1,1 +1,62 @@
 # Productivity-Pulse
+import matplotlib.pyplot as plt
+
+# --- STEP 1: Data Preparation (Standard Python Lists) ---
+# 30 days represented as a list of numbers from 1 to 30
+days = list(range(1, 31))
+
+# 30 mock productivity scores (1-10)
+productivity = [8, 8, 9, 9, 8, 2, 4, 8, 9, 8, 8, 3, 4, 8, 9,
+                9, 8, 2, 3, 8, 8, 8, 9, 9, 3, 4, 5, 8, 8, 7]
+
+# 7 days of the week and the total mock coffee count for each
+weekdays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+weekly_coffee = [12, 14, 15, 13, 16, 6, 4]
+
+
+# --- STEP 2 & 3: The Line Plot (Productivity Trend) ---
+plt.figure(figsize=(10, 6), dpi=100) # Setting the stage
+
+# Line customizations: blue color, thick line, and circular markers
+plt.plot(days, productivity, color='blue', linewidth=3, marker='o', linestyle='-')
+
+# Adding labels, title, and grid
+plt.title("Productivity Trend (30 Days)")
+plt.xlabel("Day Count")
+plt.ylabel("Daily Productivity (1-10)")
+plt.grid(True, linestyle='--', alpha=0.6) # Alpha makes the grid slightly transparent
+
+# The Reveal
+plt.show()
+
+
+# --- STEP 4: The Bar Plot (Weekly Caffeine) ---
+plt.figure(figsize=(10, 6), dpi=100)
+
+# Creating the bar chart with a custom color
+plt.bar(weekdays, weekly_coffee, color='saddlebrown')
+
+# Adding labels, title, and grid
+plt.title("Weekly Caffeine Distribution")
+plt.xlabel("Day of the Week")
+plt.ylabel("Total Cups of Coffee")
+plt.grid(True, linestyle='--', alpha=0.6)
+
+# The Reveal
+plt.show()
+
+
+# --- STEP 5: The Histogram (Productivity Distribution) ---
+plt.figure(figsize=(10, 6), dpi=100)
+
+# Creating the histogram and explicitly setting bins to 10
+plt.hist(productivity, bins=10, color='forestgreen', edgecolor='black')
+
+# Adding labels, title, and grid
+plt.title("Productivity Score Frequency")
+plt.xlabel("Productivity Score (1-10)")
+plt.ylabel("Frequency (Days)")
+plt.grid(True, linestyle='--', alpha=0.6)
+
+# The Reveal
+plt.show()
